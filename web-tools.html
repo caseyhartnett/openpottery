@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OpenPottery web tools directory for templates, glaze chemistry, and studio management.">
+  <title>Web Tools | OpenPottery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">OpenPottery</span>
+      </a>
+      <p class="brand-note">Free online pottery resources.</p>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tool.html">Template Tool</a>
+        <a href="blog.html">Blog</a>
+        <a href="prints.html">3D Prints</a>
+        <a href="fabrication.html">Fabrication</a>
+        <a href="software.html">Software</a>
+        <a href="web-tools.html" aria-current="page">Web Tools</a>
+        <a href="about.html">About + License</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="hero reveal">
+        <p class="eyebrow">Web tools</p>
+        <h1>Online generators & calculators</h1>
+        <p>
+          Browser-based tools for designing templates, calculating glazes, and managing your studio. No installation required.
+        </p>
+      </header>
+
+      <section class="grid reveal">
+        <article class="card">
+          <h2>Template generators</h2>
+          <p>Create custom patterns for slab building and packaging.</p>
+          <ul class="link-list">
+            <li>
+              <a href="https://www.templatemaker.nl/en/" target="_blank">Templatemaker.nl</a>
+              <br><span class="post-meta">Excellent for generating boxes, truncated cones (cups/bowls), and packaging nets.</span>
+            </li>
+            <li>
+              <a href="https://www.fromfran.com/pottery-template-calculator" target="_blank">Pottery slab mug template generator</a>
+              <br><span class="post-meta">Specialized for mugs with shrinkage calculation built-in.</span>
+            </li>
+            <li>
+              <a href="tool.html">OpenPottery template tool</a>
+              <br><span class="post-meta">Our own simple generator (Currently in development).</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Glaze & materials</h2>
+          <p>Chemistry calculators and material databases.</p>
+          <ul class="link-list">
+            <li>
+              <a href="https://glazy.org/" target="_blank">Glazy.org</a>
+              <br><span class="post-meta">The leading open community database for ceramic recipes and UMF calculation.</span>
+            </li>
+            <li>
+              <a href="https://digitalfire.com/" target="_blank">Digitalfire Insight</a>
+              <br><span class="post-meta">Comprehensive reference for ceramic materials, oxides, and technical troubleshooting.</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Kiln & firing</h2>
+          <p>Tools for firing schedules and kiln management.</p>
+          <ul class="link-list">
+            <li>
+              <a href="https://github.com/jbruce12000/kiln-controller" target="_blank">Pi kiln controller (GitHub)</a>
+              <br><span class="post-meta">Web-enabled kiln controller software for Raspberry Pi.</span>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <p>Copyright <span id="year"></span> OpenPottery.</p>
+        <p>Licensed under GNU GPL v3.0 or later.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

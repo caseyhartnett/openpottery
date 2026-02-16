@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap");
+
+:root {
+  --bg: #f5efe4;
+  --surface: #fffdf8;
+  --surface-soft: #f3eadb;
+  --ink: #1f1d1a;
+  --ink-soft: #5b554c;
+  --line: #ddcdb4;
+  --accent: #b25a2e;
+  --accent-strong: #8f3f18;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(47, 33, 20, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Serif 4", "Georgia", serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, #fff7ea 0%, rgba(255, 247, 234, 0) 36%),
+    radial-gradient(circle at 95% 15%, #ebdcc4 0%, rgba(235, 220, 196, 0) 32%),
+    var(--bg);
+  line-height: 1.55;
+}
+
+a {
+  color: var(--accent-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.layout {
+  width: min(1200px, 94vw);
+  margin: 1.75rem auto;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 1rem;
+}
+
+.sidebar {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  background: linear-gradient(170deg, var(--surface), var(--surface-soft));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: conic-gradient(from 40deg, #c07a4f, #e4bf93, #b7683d, #c07a4f);
+  border: 1px solid #b56f46;
+}
+
+.brand-text {
+  font-family: "IBM Plex Sans", "Trebuchet MS", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.brand-note {
+  margin: 0.45rem 0 0.95rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nav a {
+  border-radius: 8px;
+  padding: 0.44rem 0.55rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: "IBM Plex Sans", "Trebuchet MS", sans-serif;
+  font-size: 0.93rem;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  background: #f7ead9;
+  color: #48210f;
+}
+
+.main {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.3rem;
+  box-shadow: var(--shadow);
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.hero p {
+  margin: 0.45rem 0 0;
+  color: var(--ink-soft);
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-family: "IBM Plex Sans", "Trebuchet MS", sans-serif;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.card,
+.panel,
+.post-card,
+.tool-shell {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fffdfa;
+  padding: 0.9rem;
+}
+
+.card h2,
+.panel h2,
+.post-card h2,
+.tool-shell h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.18rem;
+}
+
+.post-card p,
+.tool-shell p,
+.panel li,
+.post-content p,
+.post-content li {
+  margin: 0.45rem 0;
+  color: #4c463e;
+}
+
+.post-content ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.post-content li {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card-link {
+  font-family: "IBM Plex Sans", "Trebuchet MS", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.panel {
+  margin-top: 0.9rem;
+}
+
+.post-list {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.post-meta {
+  margin: 0 0 0.2rem;
+  font-size: 0.84rem;
+  color: #7a7062;
+  font-family: "IBM Plex Sans", "Trebuchet MS", sans-serif;
+}
+
+.tool-placeholder {
+  margin-top: 0.65rem;
+  padding: 0.85rem;
+  border: 1px dashed #c49b75;
+  border-radius: 10px;
+  background: #fcf5ea;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  margin-top: 1.1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+  color: #6c6256;
+  font-size: 0.92rem;
+  font-family: "IBM Plex Sans", "Trebuchet MS", sans-serif;
+}
+
+.link-list {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.link-list li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: #4c463e;
+}
+
+.footer p {
+  margin: 0.2rem 0;
+}
+
+.reveal {
+  animation: rise 420ms ease both;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 920px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+  }
+}

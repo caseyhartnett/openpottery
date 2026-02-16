@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OpenPottery template generator page.">
+  <title>Template Tool | OpenPottery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">OpenPottery</span>
+      </a>
+      <p class="brand-note">Free online pottery resources.</p>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tool.html">Template Tool</a>
+        <a href="blog.html">Blog</a>
+        <a href="prints.html">3D Prints</a>
+        <a href="fabrication.html">Fabrication</a>
+        <a href="software.html">Software</a>
+        <a href="web-tools.html">Web Tools</a>
+        <a href="about.html">About + License</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="hero reveal">
+        <p class="eyebrow">Template tool</p>
+        <h1>Pottery template generator</h1>
+        <p>
+          We are developing a browser-based tool to help you design and print 
+          custom patterns for slab-built pottery. 
+        </p>
+      </header>
+
+      <section class="panel reveal">
+        <h2>Features in development</h2>
+        <ul>
+          <li>Parametric cup, bowl, and plate profiles</li>
+          <li>Custom shrinkage compensation</li>
+          <li>PDF and SVG export for hand-cutting or plotters</li>
+          <li>Saved presets for common studio forms</li>
+        </ul>
+      </section>
+
+      <section class="tool-shell reveal" aria-label="Template tool placeholder">
+        <h2>Coming soon</h2>
+        <p>The first version of our generator is currently under construction.</p>
+        <div class="tool-placeholder">
+          <p><strong>Status:</strong> In development</p>
+          <p>Check back soon to try the interactive generator.</p>
+        </div>
+      </section>
+
+      <div id="tool-root" class="hidden" aria-hidden="true"></div>
+
+      <footer class="footer">
+        <p>Copyright <span id="year"></span> OpenPottery.</p>
+        <p>Licensed under GNU GPL v3.0 or later.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

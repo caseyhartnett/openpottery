@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OpenPottery blog for notes, updates, and practical guides.">
+  <title>Blog | OpenPottery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">OpenPottery</span>
+      </a>
+      <p class="brand-note">Free online pottery resources.</p>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="tool.html">Template Tool</a>
+        <a href="blog.html">Blog</a>
+        <a href="prints.html">3D Prints</a>
+        <a href="fabrication.html">Fabrication</a>
+        <a href="software.html">Software</a>
+        <a href="web-tools.html">Web Tools</a>
+        <a href="about.html">About + License</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="hero reveal">
+        <p class="eyebrow">Blog</p>
+        <h1>Project notes and pottery workflows</h1>
+        <p>Updates on new features, community resources, and practical guides for the modern studio.</p>
+      </header>
+
+      <section class="post-list reveal">
+        <article class="post-card">
+          <p class="post-meta">February 15, 2026</p>
+          <h2>3D printed texture molds: meet Casper</h2>
+          <div class="post-content">
+            <img src="assets/casper-tile.png" alt="A pottery tile featuring a textured relief of a cat named Casper" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+            <p>
+              One of the most exciting intersections of digital fabrication and clay is the ability 
+              to create custom texture molds. I recently made this tile of my cat, Casper, 
+              using a 3D printed negative mold.
+            </p>
+            <p>
+              The workflow is surprisingly simple. I started with a photo and used a lithophane 
+              generator to create a negative mold. I've experimented with a few tools—while 
+              <a href="https://itslitho.com/" target="_blank">ItsLitho</a> offers deep control 
+              over the depth and settings, I've found the 
+              <a href="https://makerworld.com/en/makerlab/lithophaneBoard" target="_blank">MakerWorld Lithophane Tool</a> 
+              is often the best choice for a quick project. It just works, requiring very little 
+              fiddling to get an ideal result for printing.
+            </p>
+            <p>
+              For this tile, I set the depth to around 1/4 inch (5-6mm) and printed the mold 
+              in basic PLA on my Bambu A1. From there, the pottery steps begin:
+            </p>
+            <ul>
+              <li>Roll a slab of clay to about 3/8 inch thick.</li>
+              <li>Dust the mold with corn starch to ensure an easy release.</li>
+              <li>Press the clay firmly into the mold (this may take a few tries to learn the right pressure).</li>
+              <li>Trim the excess and carefully pull the tile out.</li>
+            </ul>
+            <p>
+              After the tile dried, it went through a bisque and glaze firing. I used 
+              <strong>Amaco Seaweed</strong> glaze, which does a great job of breaking over 
+              the textures. I'm planning a full series of these, and the same technique 
+              works perfectly for custom studio logos or more abstract patterns.
+            </p>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <p class="post-meta">February 15, 2026</p>
+          <h2>How this platform is organized</h2>
+          <p>
+            From public domain manuals in our Resources section to 3D printable studio 
+            jigs, we've organized OpenPottery to support both traditional craft and 
+            digital fabrication.
+          </p>
+          <a class="card-link" href="#">Read more</a>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <p>Copyright <span id="year"></span> OpenPottery.</p>
+        <p>Licensed under GNU GPL v3.0 or later.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
