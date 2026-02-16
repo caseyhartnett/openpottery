@@ -6,7 +6,7 @@ Simple static website scaffold for `openpottery.com`.
 
 - `index.html` - Home / hub page
 - `resources.html` - Texts directory
-- `tool.html` - Placeholder for template generator UI
+- `tool.html` - Redirect page to the hosted template generator at `https://tool.openpottery.com`
 - `blog.html` - Starter blog listing
 - `prints.html` - 3D prints section
 - `software.html` - Software section
@@ -33,4 +33,4 @@ Then open `http://localhost:8080`.
 
 1. Replace placeholder links and draft copy.
 2. Add your final logo and update the brand mark.
-3. Mount your template generator app into `tool.html` (`#tool-root`).
+3. Keep tool links pointed to `https://tool.openpottery.com` and maintain redirect rules in `_redirects`.

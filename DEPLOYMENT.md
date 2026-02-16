@@ -91,9 +91,10 @@ This keeps both repos independent and clean.
    - Example (Vite): build command `npm run build`, output `dist`
    - Example (Next): use Cloudflare Next preset or adapter workflow
 3. Give it a subdomain such as `tool.openpottery.com`.
-4. In this repo, update `tool.html` to:
-   - add a prominent "Open Template Tool" button linking to `https://tool.openpottery.com`
-   - optionally embed with an `<iframe>` if desired
+4. In this repo:
+   - point all template tool links to `https://tool.openpottery.com`
+   - keep `tool.html` as a redirect page to `https://tool.openpottery.com`
+   - maintain Cloudflare Pages redirects in `_redirects` for legacy paths (`/tool`, `/tool.html`)
 
 Example link snippet:
 
@@ -157,7 +158,8 @@ Important:
 - Main site: `https://openpottery.com`
 - Tool app: `https://tool.openpottery.com`
 - From main site:
-  - `tool.html` explains the tool and links to the app
+  - navigation and cards link directly to `https://tool.openpottery.com`
+  - `tool.html` and `_redirects` catch old links and forward to the tool app
   - Keep docs/help/FAQ on the main site
 
 This is usually the fastest and least fragile setup.
