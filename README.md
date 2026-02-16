@@ -5,7 +5,7 @@ Simple static website scaffold for `openpottery.com`.
 ## Included pages
 
 - `index.html` - Home / hub page
-- `resources.html` - Free resources directory
+- `resources.html` - Texts directory
 - `tool.html` - Placeholder for template generator UI
 - `blog.html` - Starter blog listing
 - `prints.html` - 3D prints section
