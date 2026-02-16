@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Curated pottery video tutorials and creator guides for beginners and hobbyists.">
+  <title>Videos | OpenPottery</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .video-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: var(--surface-soft);
+      display: flex;
+      flex-direction: column;
+    }
+    .video-card h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    .video-meta {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-bottom: 0.5rem;
+      font-family: "IBM Plex Sans", sans-serif;
+    }
+    .video-tag {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .creator-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .creator-card {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">OpenPottery</span>
+      </a>
+      <p class="brand-note">Free online pottery resources.</p>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="videos.html" aria-current="page">Videos</a>
+        <a href="resources.html">Resources</a>
+        <a href="tool.html">Template Tool</a>
+        <a href="blog.html">Blog</a>
+        <a href="prints.html">3D Prints</a>
+        <a href="fabrication.html">Fabrication</a>
+        <a href="software.html">Software</a>
+        <a href="web-tools.html">Web Tools</a>
+        <a href="about.html">About + License</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="hero reveal">
+        <p class="eyebrow">Curated Resources</p>
+        <h1>Pottery Videos</h1>
+        <p>A hand-picked selection of tutorials and creators to help you master the craft.</p>
+      </header>
+
+      <section class="reveal">
+        <h2>Curated Video Guides</h2>
+        <p>Fundamental tutorials and special demonstrations covering core pottery techniques.</p>
+        
+        <div class="videos-grid">
+          <article class="video-card">
+            <span class="video-tag">Wheel Throwing</span>
+            <h3>Centering Clay – 5 Keys</h3>
+            <span class="video-meta">Expert Clay • 6 min • 2024</span>
+            <p>A short, structured checklist for mastering one of the hardest parts of the wheel.</p>
+            <a href="https://www.youtube.com/watch?v=1-OPvM1KU2o" target="_blank" class="card-link">Watch on YouTube</a>
+          </article>
+
+          <article class="video-card">
+            <span class="video-tag">Handbuilding</span>
+            <h3>Coil Pot for Beginners</h3>
+            <span class="video-meta">Pottery to the People • 2021</span>
+            <p>A friendly, accessible entry to handbuilding with coils.</p>
+            <a href="https://www.youtube.com/live/BN1Fcr_pVvQ" target="_blank" class="card-link">Watch on YouTube</a>
+          </article>
+
+          <article class="video-card">
+            <span class="video-tag">Glazing</span>
+            <h3>How to Make Glaze Test Tiles</h3>
+            <span class="video-meta">Florian Gadsby • 18 min • 2024</span>
+            <p>Professional workflow for creating test tiles that match your forms.</p>
+            <a href="https://www.youtube.com/watch?v=2-d7dS3uGpg" target="_blank" class="card-link">Watch on YouTube</a>
+          </article>
+
+          <article class="video-card">
+            <span class="video-tag">Glazing</span>
+            <h3>Using Wax Resist</h3>
+            <span class="video-meta">Molly Makes Pottery • 2024</span>
+            <p>A quick "micro-lesson" on using wax resist for better glazing results.</p>
+            <a href="https://www.youtube.com/watch?v=bTMWJpAbILo" target="_blank" class="card-link">Watch on YouTube</a>
+          </article>
+
+          <article class="video-card">
+            <span class="video-tag">Wheel Throwing</span>
+            <h3>Centering Clay (Evergreen)</h3>
+            <span class="video-meta">Christine Caswell • 2015</span>
+            <p>A classic, high-reach guide to centering that has helped hundreds of thousands of potters.</p>
+            <a href="https://www.youtube.com/watch?v=H-OZtLjQMNk" target="_blank" class="card-link">Watch on YouTube</a>
+          </article>
+
+          <article class="video-card">
+            <span class="video-tag">Kilns & Firing</span>
+            <h3>How to Build an Earthen Oven</h3>
+            <span class="video-meta">Townsends • 2011</span>
+            <p>Learn how to build a wood-fired earthen oven, a technique documented back to ancient Rome.</p>
+            <a href="https://www.youtube.com/watch?v=i0foHjPVbP4" target="_blank" class="card-link">Watch on YouTube</a>
+          </article>
+
+          <article class="video-card">
+            <span class="video-tag">History</span>
+            <h3>The World's First Pottery is Older Than You Think</h3>
+            <span class="video-meta">Dan Davis History • 2025</span>
+            <p>The remarkable story of how hunter-gatherer societies developed pottery technology long before the invention of farming.</p>
+            <a href="https://www.youtube.com/watch?v=2taUjbCb3N8" target="_blank" class="card-link">Watch on YouTube</a>
+          </article>
+
+          <article class="video-card">
+            <span class="video-tag">History</span>
+            <h3>The Invention of Pottery - China & Czechia</h3>
+            <span class="video-meta">Stefan Milo • 2020</span>
+            <p>A prehistory documentary exploring the earliest evidence of pottery in China and Czechia.</p>
+            <a href="https://www.youtube.com/watch?v=SAYmXvTWV4w&t=62s" target="_blank" class="card-link">Watch on YouTube</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="reveal" style="margin-top: 3rem;">
+        <h2>Featured Creators</h2>
+        <p>Follow these experts for consistent, high-quality pottery education.</p>
+        
+        <div class="creator-list">
+          <div class="creator-card">
+            <h3>Florian Gadsby</h3>
+            <p class="post-meta">YouTube • Instagram</p>
+            <p>Refined functional ware, wheel throwing fundamentals, and studio discipline.</p>
+            <a href="https://www.youtube.com/@floriangadsby" target="_blank">YouTube Channel</a>
+          </div>
+          <div class="creator-card">
+            <h3>Ingleton Pottery</h3>
+            <p class="post-meta">YouTube</p>
+            <p>Practical studio advice and accessible how-to demonstrations from a long-running channel.</p>
+            <a href="https://www.youtube.com/@ingletonpottery" target="_blank">YouTube Channel</a>
+          </div>
+          <div class="creator-card">
+            <h3>Pottery to the People</h3>
+            <p class="post-meta">YouTube</p>
+            <p>Friendly, community-focused pottery education and handbuilding tutorials.</p>
+            <a href="https://www.youtube.com/c/PotterytothePeople" target="_blank">YouTube Channel</a>
+          </div>
+          <div class="creator-card">
+            <h3>Ancient Pottery</h3>
+            <p class="post-meta">YouTube</p>
+            <p>Andy Ward's channel dedicated to ancient pottery making and historical Southwest techniques.</p>
+            <a href="https://www.youtube.com/@AncientPottery" target="_blank">YouTube Channel</a>
+          </div>
+          <div class="creator-card">
+            <h3>Little Street Pottery</h3>
+            <p class="post-meta">YouTube</p>
+            <p>Technique-focused demonstrations and studio insights.</p>
+            <a href="https://www.youtube.com/c/LittleStreetPottery" target="_blank">YouTube Channel</a>
+          </div>
+          <div class="creator-card">
+            <h3>Potteryforall</h3>
+            <p class="post-meta">Instagram</p>
+            <p>Curated pottery inspiration and process clips from around the world.</p>
+            <a href="https://www.instagram.com/potteryforall/" target="_blank">Instagram Profile</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Copyright <span id="year"></span> OpenPottery.</p>
+        <p>Licensed under GNU GPL v3.0 or later.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
