@@ -17,6 +17,7 @@ Simple static website scaffold for `openpottery.com`.
 This site is configured as **GPL-3.0-or-later**.
 
 - See `LICENSE` for details.
+- Deployment/setup guide: `DEPLOYMENT.md`
 
 ## Local preview
 
