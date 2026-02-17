@@ -16,10 +16,40 @@
     .video-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 1rem;
+      padding: 0;
       background: var(--surface-soft);
       display: flex;
       flex-direction: column;
+      overflow: hidden;
+    }
+    .video-thumb-link {
+      display: block;
+      position: relative;
+      line-height: 0;
+    }
+    .video-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      background: #d7c5aa;
+    }
+    .video-thumb-link::after {
+      content: "Play";
+      position: absolute;
+      right: 0.75rem;
+      bottom: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.72);
+      color: white;
+      font-size: 0.75rem;
+      font-family: "IBM Plex Sans", sans-serif;
+      line-height: 1.1;
+      letter-spacing: 0.03em;
+    }
+    .video-content {
+      padding: 1rem;
     }
     .video-card h3 {
       margin: 0 0 0.5rem 0;
@@ -80,7 +110,7 @@
 
     <main class="main">
       <header class="hero reveal">
-        <p class="eyebrow">Curated Texts</p>
+        <p class="eyebrow">Curated Videos</p>
         <h1>Pottery Videos</h1>
         <p>A hand-picked selection of tutorials and creators to help you master the craft.</p>
       </header>
@@ -91,67 +121,107 @@
         
         <div class="videos-grid">
           <article class="video-card">
-            <span class="video-tag">Wheel Throwing</span>
-            <h3>Centering Clay – 5 Keys</h3>
-            <span class="video-meta">Expert Clay • 6 min • 2024</span>
-            <p>A short, structured checklist for mastering one of the hardest parts of the wheel.</p>
-            <a href="https://www.youtube.com/watch?v=1-OPvM1KU2o" target="_blank" class="card-link">Watch on YouTube</a>
+            <a class="video-thumb-link" href="https://www.youtube.com/watch?v=1-OPvM1KU2o" target="_blank" rel="noopener noreferrer">
+              <img class="video-thumb" src="https://i.ytimg.com/vi/1-OPvM1KU2o/hqdefault.jpg" alt="Centering Clay – 5 Keys video preview thumbnail" loading="lazy">
+            </a>
+            <div class="video-content">
+              <span class="video-tag">Wheel Throwing</span>
+              <h3>Centering Clay – 5 Keys</h3>
+              <span class="video-meta">Expert Clay • 6 min • 2024</span>
+              <p>A short, structured checklist for mastering one of the hardest parts of the wheel.</p>
+              <a href="https://www.youtube.com/watch?v=1-OPvM1KU2o" target="_blank" rel="noopener noreferrer" class="card-link">Watch on YouTube</a>
+            </div>
           </article>
 
           <article class="video-card">
-            <span class="video-tag">Handbuilding</span>
-            <h3>Coil Pot for Beginners</h3>
-            <span class="video-meta">Pottery to the People • 2021</span>
-            <p>A friendly, accessible entry to handbuilding with coils.</p>
-            <a href="https://www.youtube.com/live/BN1Fcr_pVvQ" target="_blank" class="card-link">Watch on YouTube</a>
+            <a class="video-thumb-link" href="https://www.youtube.com/live/BN1Fcr_pVvQ" target="_blank" rel="noopener noreferrer">
+              <img class="video-thumb" src="https://i.ytimg.com/vi/BN1Fcr_pVvQ/hqdefault.jpg" alt="Coil Pot for Beginners video preview thumbnail" loading="lazy">
+            </a>
+            <div class="video-content">
+              <span class="video-tag">Handbuilding</span>
+              <h3>Coil Pot for Beginners</h3>
+              <span class="video-meta">Pottery to the People • 2021</span>
+              <p>A friendly, accessible entry to handbuilding with coils.</p>
+              <a href="https://www.youtube.com/live/BN1Fcr_pVvQ" target="_blank" rel="noopener noreferrer" class="card-link">Watch on YouTube</a>
+            </div>
           </article>
 
           <article class="video-card">
-            <span class="video-tag">Glazing</span>
-            <h3>How to Make Glaze Test Tiles</h3>
-            <span class="video-meta">Florian Gadsby • 18 min • 2024</span>
-            <p>Professional workflow for creating test tiles that match your forms.</p>
-            <a href="https://www.youtube.com/watch?v=2-d7dS3uGpg" target="_blank" class="card-link">Watch on YouTube</a>
+            <a class="video-thumb-link" href="https://www.youtube.com/watch?v=2-d7dS3uGpg" target="_blank" rel="noopener noreferrer">
+              <img class="video-thumb" src="https://i.ytimg.com/vi/2-d7dS3uGpg/hqdefault.jpg" alt="How to Make Glaze Test Tiles video preview thumbnail" loading="lazy">
+            </a>
+            <div class="video-content">
+              <span class="video-tag">Glazing</span>
+              <h3>How to Make Glaze Test Tiles</h3>
+              <span class="video-meta">Florian Gadsby • 18 min • 2024</span>
+              <p>Professional workflow for creating test tiles that match your forms.</p>
+              <a href="https://www.youtube.com/watch?v=2-d7dS3uGpg" target="_blank" rel="noopener noreferrer" class="card-link">Watch on YouTube</a>
+            </div>
           </article>
 
           <article class="video-card">
-            <span class="video-tag">Glazing</span>
-            <h3>Using Wax Resist</h3>
-            <span class="video-meta">Molly Makes Pottery • 2024</span>
-            <p>A quick "micro-lesson" on using wax resist for better glazing results.</p>
-            <a href="https://www.youtube.com/watch?v=bTMWJpAbILo" target="_blank" class="card-link">Watch on YouTube</a>
+            <a class="video-thumb-link" href="https://www.youtube.com/watch?v=bTMWJpAbILo" target="_blank" rel="noopener noreferrer">
+              <img class="video-thumb" src="https://i.ytimg.com/vi/bTMWJpAbILo/hqdefault.jpg" alt="Using Wax Resist video preview thumbnail" loading="lazy">
+            </a>
+            <div class="video-content">
+              <span class="video-tag">Glazing</span>
+              <h3>Using Wax Resist</h3>
+              <span class="video-meta">Molly Makes Pottery • 2024</span>
+              <p>A quick "micro-lesson" on using wax resist for better glazing results.</p>
+              <a href="https://www.youtube.com/watch?v=bTMWJpAbILo" target="_blank" rel="noopener noreferrer" class="card-link">Watch on YouTube</a>
+            </div>
           </article>
 
           <article class="video-card">
-            <span class="video-tag">Wheel Throwing</span>
-            <h3>Centering Clay (Evergreen)</h3>
-            <span class="video-meta">Christine Caswell • 2015</span>
-            <p>A classic, high-reach guide to centering that has helped hundreds of thousands of potters.</p>
-            <a href="https://www.youtube.com/watch?v=H-OZtLjQMNk" target="_blank" class="card-link">Watch on YouTube</a>
+            <a class="video-thumb-link" href="https://www.youtube.com/watch?v=H-OZtLjQMNk" target="_blank" rel="noopener noreferrer">
+              <img class="video-thumb" src="https://i.ytimg.com/vi/H-OZtLjQMNk/hqdefault.jpg" alt="Centering Clay (Evergreen) video preview thumbnail" loading="lazy">
+            </a>
+            <div class="video-content">
+              <span class="video-tag">Wheel Throwing</span>
+              <h3>Centering Clay (Evergreen)</h3>
+              <span class="video-meta">Christine Caswell • 2015</span>
+              <p>A classic, high-reach guide to centering that has helped hundreds of thousands of potters.</p>
+              <a href="https://www.youtube.com/watch?v=H-OZtLjQMNk" target="_blank" rel="noopener noreferrer" class="card-link">Watch on YouTube</a>
+            </div>
           </article>
 
           <article class="video-card">
-            <span class="video-tag">Kilns & Firing</span>
-            <h3>How to Build an Earthen Oven</h3>
-            <span class="video-meta">Townsends • 2011</span>
-            <p>Learn how to build a wood-fired earthen oven, a technique documented back to ancient Rome.</p>
-            <a href="https://www.youtube.com/watch?v=i0foHjPVbP4" target="_blank" class="card-link">Watch on YouTube</a>
+            <a class="video-thumb-link" href="https://www.youtube.com/watch?v=i0foHjPVbP4" target="_blank" rel="noopener noreferrer">
+              <img class="video-thumb" src="https://i.ytimg.com/vi/i0foHjPVbP4/hqdefault.jpg" alt="How to Build an Earthen Oven video preview thumbnail" loading="lazy">
+            </a>
+            <div class="video-content">
+              <span class="video-tag">Kilns & Firing</span>
+              <h3>How to Build an Earthen Oven</h3>
+              <span class="video-meta">Townsends • 2011</span>
+              <p>Learn how to build a wood-fired earthen oven, a technique documented back to ancient Rome.</p>
+              <a href="https://www.youtube.com/watch?v=i0foHjPVbP4" target="_blank" rel="noopener noreferrer" class="card-link">Watch on YouTube</a>
+            </div>
           </article>
 
           <article class="video-card">
-            <span class="video-tag">History</span>
-            <h3>The World's First Pottery is Older Than You Think</h3>
-            <span class="video-meta">Dan Davis History • 2025</span>
-            <p>The remarkable story of how hunter-gatherer societies developed pottery technology long before the invention of farming.</p>
-            <a href="https://www.youtube.com/watch?v=2taUjbCb3N8" target="_blank" class="card-link">Watch on YouTube</a>
+            <a class="video-thumb-link" href="https://www.youtube.com/watch?v=2taUjbCb3N8" target="_blank" rel="noopener noreferrer">
+              <img class="video-thumb" src="https://i.ytimg.com/vi/2taUjbCb3N8/hqdefault.jpg" alt="The World's First Pottery is Older Than You Think video preview thumbnail" loading="lazy">
+            </a>
+            <div class="video-content">
+              <span class="video-tag">History</span>
+              <h3>The World's First Pottery is Older Than You Think</h3>
+              <span class="video-meta">Dan Davis History • 2025</span>
+              <p>The remarkable story of how hunter-gatherer societies developed pottery technology long before the invention of farming.</p>
+              <a href="https://www.youtube.com/watch?v=2taUjbCb3N8" target="_blank" rel="noopener noreferrer" class="card-link">Watch on YouTube</a>
+            </div>
           </article>
 
           <article class="video-card">
-            <span class="video-tag">History</span>
-            <h3>The Invention of Pottery - China & Czechia</h3>
-            <span class="video-meta">Stefan Milo • 2020</span>
-            <p>A prehistory documentary exploring the earliest evidence of pottery in China and Czechia.</p>
-            <a href="https://www.youtube.com/watch?v=SAYmXvTWV4w&t=62s" target="_blank" class="card-link">Watch on YouTube</a>
+            <a class="video-thumb-link" href="https://www.youtube.com/watch?v=SAYmXvTWV4w&t=62s" target="_blank" rel="noopener noreferrer">
+              <img class="video-thumb" src="https://i.ytimg.com/vi/SAYmXvTWV4w/hqdefault.jpg" alt="The Invention of Pottery - China and Czechia video preview thumbnail" loading="lazy">
+            </a>
+            <div class="video-content">
+              <span class="video-tag">History</span>
+              <h3>The Invention of Pottery - China & Czechia</h3>
+              <span class="video-meta">Stefan Milo • 2020</span>
+              <p>A prehistory documentary exploring the earliest evidence of pottery in China and Czechia.</p>
+              <a href="https://www.youtube.com/watch?v=SAYmXvTWV4w&t=62s" target="_blank" rel="noopener noreferrer" class="card-link">Watch on YouTube</a>
+            </div>
           </article>
         </div>
       </section>
@@ -165,37 +235,37 @@
             <h3>Florian Gadsby</h3>
             <p class="post-meta">YouTube • Instagram</p>
             <p>Refined functional ware, wheel throwing fundamentals, and studio discipline.</p>
-            <a href="https://www.youtube.com/@floriangadsby" target="_blank">YouTube Channel</a>
+            <a href="https://www.youtube.com/@floriangadsby" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
           </div>
           <div class="creator-card">
             <h3>Ingleton Pottery</h3>
             <p class="post-meta">YouTube</p>
             <p>Practical studio advice and accessible how-to demonstrations from a long-running channel.</p>
-            <a href="https://www.youtube.com/@ingletonpottery" target="_blank">YouTube Channel</a>
+            <a href="https://www.youtube.com/@ingletonpottery" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
           </div>
           <div class="creator-card">
             <h3>Pottery to the People</h3>
             <p class="post-meta">YouTube</p>
             <p>Friendly, community-focused pottery education and handbuilding tutorials.</p>
-            <a href="https://www.youtube.com/c/PotterytothePeople" target="_blank">YouTube Channel</a>
+            <a href="https://www.youtube.com/c/PotterytothePeople" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
           </div>
           <div class="creator-card">
             <h3>Ancient Pottery</h3>
             <p class="post-meta">YouTube</p>
             <p>Andy Ward's channel dedicated to ancient pottery making and historical Southwest techniques.</p>
-            <a href="https://www.youtube.com/@AncientPottery" target="_blank">YouTube Channel</a>
+            <a href="https://www.youtube.com/@AncientPottery" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
           </div>
           <div class="creator-card">
             <h3>Little Street Pottery</h3>
             <p class="post-meta">YouTube</p>
             <p>Technique-focused demonstrations and studio insights.</p>
-            <a href="https://www.youtube.com/c/LittleStreetPottery" target="_blank">YouTube Channel</a>
+            <a href="https://www.youtube.com/c/LittleStreetPottery" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
           </div>
           <div class="creator-card">
             <h3>Potteryforall</h3>
             <p class="post-meta">Instagram</p>
             <p>Curated pottery inspiration and process clips from around the world.</p>
-            <a href="https://www.instagram.com/potteryforall/" target="_blank">Instagram Profile</a>
+            <a href="https://www.instagram.com/potteryforall/" target="_blank" rel="noopener noreferrer">Instagram Profile</a>
           </div>
         </div>
       </section>

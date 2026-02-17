@@ -6,6 +6,24 @@
   <meta name="description" content="OpenPottery blog for notes, updates, and practical guides.">
   <title>Blog | OpenPottery</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .photo-grid img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+    @media (max-width: 760px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="layout">
@@ -38,14 +56,60 @@
 
       <section class="post-list reveal">
         <article class="post-card">
+          <p class="post-meta">February 17, 2026</p>
+          <h2>Leaf ceramics with 3D-printed cookie cutters</h2>
+          <div class="post-content">
+            <p>
+              I've been exploring ways to blend digital precision with the organic feel of hand-built 
+              ceramics. These recent pieces were created using custom leaf-based cookie cutter sets 
+              that allow for a high level of detail while maintaining a consistent silhouette. Each 
+              design features a clever two-part system: a sharp outer cutter for the profile and a 
+              separate internal stamp to emboss the intricate vein textures.
+            </p>
+            <p>
+              The workflow is efficient but still leaves plenty of room for manual touch. After 
+              pressing the initial shape and vein details into the clay slab, I use my standard 
+              hand-building tools to clean up the edges, carve deeper into certain areas, and 
+              refine the curves until the leaf takes on a more natural, lifelike form. 
+            </p>
+            <p>
+              What I love most about this approach is the scalability. These can be made large 
+              enough to serve as the structural base for an entire vessel, or kept small and 
+              delicate to serve as decorative accents on larger thrown pieces. It's a great 
+              example of how 3D printing can act as a helpful bridge for traditional studio 
+              work rather than a replacement.
+            </p>
+            <p>Process examples:</p>
+            <div class="photo-grid">
+              <img src="assets/leaf-cookie-cutter-01.jpg" alt="Leaf ceramic example made with a two-part cookie cutter and vein stamp">
+              <img src="assets/leaf-cookie-cutter-02.jpg" alt="Leaf ceramic example showing shaped edge and embossed leaf veins">
+              <img src="assets/leaf-cookie-cutter-03.jpg" alt="Leaf ceramic example refined with hand-building tools after stamping">
+              <img src="assets/leaf-cookie-cutter-04.jpg" alt="Leaf ceramic example used as a decorative or vessel-building element">
+            </div>
+            <p>MakerWorld cookie cutter models used:</p>
+            <ul>
+              <li><a href="https://makerworld.com/en/models/1511066-leaves-cookie-cutter-playdoh-stamp?from=search#profileId-1582120" target="_blank" rel="noopener noreferrer">Leaves Cookie Cutter + Stamp</a></li>
+              <li><a href="https://makerworld.com/en/models/1689626-dope-marijuana-cannabis-leaf-cookie-cutter-stamp?from=search#profileId-2373858" target="_blank" rel="noopener noreferrer">Cannabis Leaf Cookie Cutter + Stamp</a></li>
+            </ul>
+            <p>Custom generator tools:</p>
+            <ul>
+              <li><a href="https://makerworld.com/en/models/2126805-cookie-cutter-generator?from=search#profileId-2302719" target="_blank" rel="noopener noreferrer">Cookie Cutter Generator</a></li>
+              <li><a href="https://makerworld.com/en/models/1720211-cookie-cutter-stamp-generator?from=search" target="_blank" rel="noopener noreferrer">Cookie Cutter + Stamp Generator</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="post-card">
           <p class="post-meta">February 15, 2026</p>
           <h2>3D printed texture molds: meet Casper</h2>
           <div class="post-content">
             <img src="assets/casper-tile.png" alt="A pottery tile featuring a textured relief of a cat named Casper" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
             <p>
               One of the most exciting intersections of digital fabrication and clay is the ability 
-              to create custom texture molds. I recently made this tile of my cat, Casper, 
-              using a 3D printed negative mold.
+              to create custom texture molds that capture fine details impossible to achieve by hand. 
+              I recently made this relief tile of my cat, Casper, using a 3D printed negative mold—a 
+              project that turned out to be a perfect test case for translating photography into 
+              tactile ceramic art.
             </p>
             <p>
               The workflow is surprisingly simple. I started with a photo and used a lithophane 
@@ -67,11 +131,18 @@
               <li>Trim the excess and carefully pull the tile out.</li>
             </ul>
             <p>
-              After the tile dried, it went through a bisque and glaze firing. I used 
-              <strong>Amaco Seaweed</strong> glaze, which does a great job of breaking over 
-              the textures. I'm planning a full series of these, and the same technique 
-              works perfectly for custom studio logos or more abstract patterns.
+              After the tile dried, it went through a standard bisque and glaze firing. I used 
+              <strong>Amaco Seaweed</strong> glaze, which is known for how beautifully it 
+              "breaks" over sharp textures—pooling in the recessed areas of the fur and 
+              thinning on the highlights to create a genuine sense of depth. I'm planning 
+              a full series of these portrait tiles, as the same technique works perfectly 
+              for everything from custom studio logos to complex abstract patterns.
             </p>
+            <p>
+              Here's another piece made with the same process:
+            </p>
+            <img src="assets/lifeline-tile.jpg" alt="Another ceramic texture tile made with the same 3D-printed mold workflow" style="width: 100%; border-radius: 8px; margin-top: 0.5rem;">
+            <img src="assets/casper-tile2.jpg" alt="A second ceramic texture tile made with the same 3D-printed mold workflow" style="width: 100%; border-radius: 8px; margin-top: 0.75rem;">
           </div>
         </article>
 
@@ -79,9 +150,16 @@
           <p class="post-meta">February 15, 2026</p>
           <h2>How this platform is organized</h2>
           <p>
-            From public domain manuals in our Texts section to 3D printable studio 
-            jigs, we've organized OpenPottery to support both traditional craft and 
-            digital fabrication.
+            OpenPottery was built to be a central hub for the modern studio, bridging the gap 
+            between ancient ceramic traditions and the possibilities of digital fabrication. 
+            We've organized our resources into three main categories: archival knowledge, 
+            3D-printable assets, and custom software tools. 
+          </p>
+          <p>
+            Whether you're browsing public domain manuals in our Texts section, downloading 
+            specialized studio jigs from our Prints library, or generating custom slab 
+            templates with our web tools, every part of the site is designed to help you 
+            experiment with new workflows and work more efficiently.
           </p>
           <a class="card-link" href="#">Read more</a>
         </article>
