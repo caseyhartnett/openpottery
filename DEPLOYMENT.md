@@ -180,3 +180,23 @@ If domain is not resolving:
 1. Confirm custom domain is attached to the correct Pages project
 2. Confirm DNS records were created in Cloudflare
 3. Wait for DNS propagation and recheck
+
+---
+
+## 7. Link Preview API Setup (OpenGraph.io)
+
+The 3D Prints gallery uses a Cloudflare Pages Function endpoint:
+
+- `GET /api/link-preview?url=<encoded-url>`
+- Function file: `functions/api/link-preview.js`
+
+Required environment variable in your Cloudflare Pages project:
+
+- `OPEN_GRAPH_IO_KEY` = your OpenGraph.io app key
+
+Set it in:
+
+1. Cloudflare Dashboard -> Workers & Pages -> your project
+2. **Settings** -> **Variables and Secrets**
+3. Add `OPEN_GRAPH_IO_KEY` as a secret
+4. Redeploy (or push a new commit)
