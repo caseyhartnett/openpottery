@@ -5,8 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Curated pottery video tutorials and creator guides for beginners and hobbyists.">
   <title>Videos | OpenPottery</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/openpotterylogo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OpenPottery">
+  <meta property="og:title" content="Videos | OpenPottery">
+  <meta property="og:description" content="Curated pottery video tutorials and creator guides for beginners and hobbyists.">
+  <meta property="og:image" content="https://openpottery.com/assets/openpotterylogo.png">
+  <meta property="og:url" content="https://openpottery.com/videos.html">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="styles.css">
   <style>
+    .search-panel {
+      margin-top: 1rem;
+      max-width: 540px;
+    }
+    .search-panel label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.88rem;
+      font-family: "IBM Plex Sans", sans-serif;
+      color: #5a534a;
+      letter-spacing: 0.02em;
+    }
+    .search-panel input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.6rem 0.75rem;
+      font: inherit;
+      background: white;
+    }
+    .search-empty {
+      margin: 1rem 0 0;
+      color: #5a534a;
+    }
     .videos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -115,12 +148,16 @@
         <p>A hand-picked selection of tutorials and creators to help you master the craft.</p>
       </header>
 
-      <section class="reveal">
+      <section class="reveal" data-filter-root>
         <h2>Curated Video Guides</h2>
         <p>Fundamental tutorials and special demonstrations covering core pottery techniques.</p>
+        <div class="search-panel">
+          <label for="videos-filter">Search curated videos by keyword</label>
+          <input id="videos-filter" data-filter-input type="search" autocomplete="off" placeholder="Try: centering, glaze, handbuilding, history">
+        </div>
         
         <div class="videos-grid">
-          <article class="video-card">
+          <article class="video-card" data-filter-item>
             <a class="video-thumb-link" href="https://www.youtube.com/watch?v=1-OPvM1KU2o" target="_blank" rel="noopener noreferrer">
               <img class="video-thumb" src="https://i.ytimg.com/vi/1-OPvM1KU2o/hqdefault.jpg" alt="Centering Clay – 5 Keys video preview thumbnail" loading="lazy">
             </a>
@@ -133,7 +170,7 @@
             </div>
           </article>
 
-          <article class="video-card">
+          <article class="video-card" data-filter-item>
             <a class="video-thumb-link" href="https://www.youtube.com/live/BN1Fcr_pVvQ" target="_blank" rel="noopener noreferrer">
               <img class="video-thumb" src="https://i.ytimg.com/vi/BN1Fcr_pVvQ/hqdefault.jpg" alt="Coil Pot for Beginners video preview thumbnail" loading="lazy">
             </a>
@@ -146,7 +183,7 @@
             </div>
           </article>
 
-          <article class="video-card">
+          <article class="video-card" data-filter-item>
             <a class="video-thumb-link" href="https://www.youtube.com/watch?v=2-d7dS3uGpg" target="_blank" rel="noopener noreferrer">
               <img class="video-thumb" src="https://i.ytimg.com/vi/2-d7dS3uGpg/hqdefault.jpg" alt="How to Make Glaze Test Tiles video preview thumbnail" loading="lazy">
             </a>
@@ -159,7 +196,7 @@
             </div>
           </article>
 
-          <article class="video-card">
+          <article class="video-card" data-filter-item>
             <a class="video-thumb-link" href="https://www.youtube.com/watch?v=bTMWJpAbILo" target="_blank" rel="noopener noreferrer">
               <img class="video-thumb" src="https://i.ytimg.com/vi/bTMWJpAbILo/hqdefault.jpg" alt="Using Wax Resist video preview thumbnail" loading="lazy">
             </a>
@@ -172,7 +209,7 @@
             </div>
           </article>
 
-          <article class="video-card">
+          <article class="video-card" data-filter-item>
             <a class="video-thumb-link" href="https://www.youtube.com/watch?v=H-OZtLjQMNk" target="_blank" rel="noopener noreferrer">
               <img class="video-thumb" src="https://i.ytimg.com/vi/H-OZtLjQMNk/hqdefault.jpg" alt="Centering Clay (Evergreen) video preview thumbnail" loading="lazy">
             </a>
@@ -185,7 +222,7 @@
             </div>
           </article>
 
-          <article class="video-card">
+          <article class="video-card" data-filter-item>
             <a class="video-thumb-link" href="https://www.youtube.com/watch?v=i0foHjPVbP4" target="_blank" rel="noopener noreferrer">
               <img class="video-thumb" src="https://i.ytimg.com/vi/i0foHjPVbP4/hqdefault.jpg" alt="How to Build an Earthen Oven video preview thumbnail" loading="lazy">
             </a>
@@ -198,7 +235,7 @@
             </div>
           </article>
 
-          <article class="video-card">
+          <article class="video-card" data-filter-item>
             <a class="video-thumb-link" href="https://www.youtube.com/watch?v=2taUjbCb3N8" target="_blank" rel="noopener noreferrer">
               <img class="video-thumb" src="https://i.ytimg.com/vi/2taUjbCb3N8/hqdefault.jpg" alt="The World's First Pottery is Older Than You Think video preview thumbnail" loading="lazy">
             </a>
@@ -211,7 +248,7 @@
             </div>
           </article>
 
-          <article class="video-card">
+          <article class="video-card" data-filter-item>
             <a class="video-thumb-link" href="https://www.youtube.com/watch?v=SAYmXvTWV4w&t=62s" target="_blank" rel="noopener noreferrer">
               <img class="video-thumb" src="https://i.ytimg.com/vi/SAYmXvTWV4w/hqdefault.jpg" alt="The Invention of Pottery - China and Czechia video preview thumbnail" loading="lazy">
             </a>
@@ -224,6 +261,7 @@
             </div>
           </article>
         </div>
+        <p class="search-empty" data-filter-empty hidden>No videos match that keyword yet.</p>
       </section>
 
       <section class="reveal" style="margin-top: 3rem;">

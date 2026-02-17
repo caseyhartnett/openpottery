@@ -5,8 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="OpenPottery 3D print library for pottery tools and helpers.">
   <title>3D Prints | OpenPottery</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/openpotterylogo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OpenPottery">
+  <meta property="og:title" content="3D Prints | OpenPottery">
+  <meta property="og:description" content="OpenPottery 3D print library for pottery tools and helpers.">
+  <meta property="og:image" content="https://openpottery.com/assets/openpotterylogo.png">
+  <meta property="og:url" content="https://openpottery.com/prints.html">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="styles.css">
   <style>
+    .search-panel {
+      margin-top: 1rem;
+      max-width: 540px;
+    }
+    .search-panel label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.88rem;
+      font-family: "IBM Plex Sans", sans-serif;
+      color: #5a534a;
+      letter-spacing: 0.02em;
+    }
+    .search-panel input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.6rem 0.75rem;
+      font: inherit;
+      background: white;
+    }
+    .search-empty {
+      margin: 1rem 0 0;
+      color: #5a534a;
+    }
     .model-catalog {
       margin-top: 1rem;
       display: grid;
@@ -96,144 +129,152 @@
         <p>If you do not own a printer, check your local library or maker space for low-cost or free access to 3D printing.</p>
       </header>
 
-      <section class="model-catalog reveal">
-        <article class="model-group">
+      <section class="reveal" data-filter-root>
+        <div class="search-panel">
+          <label for="prints-filter">Search print models by keyword</label>
+          <input id="prints-filter" data-filter-input type="search" autocomplete="off" placeholder="Try: rib, stamp, centering, slab">
+        </div>
+
+        <div class="model-catalog">
+          <article class="model-group" data-filter-group>
           <h2>Texture & Surface</h2>
           <p>Rollers, stamps, and coil helpers for decorative work.</p>
           <div class="model-gallery">
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Texture rollers collection" loading="lazy" data-preview-url="https://makerworld.com/en/collections/6762491-texture-rollers">
               <div class="model-body"><h3>Texture rollers collection</h3><p>Large collection of wicker, basket weave, and geometric textures.</p><a class="card-link" href="https://makerworld.com/en/collections/6762491-texture-rollers" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Pottery coil maker" loading="lazy" data-preview-url="https://makerworld.com/en/models/2356193-pottery-coil-maker">
               <div class="model-body"><h3>Pottery coil maker</h3><p>Print tool for consistent coil diameters.</p><a class="card-link" href="https://makerworld.com/en/models/2356193-pottery-coil-maker" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Valentine's Day texture rollers" loading="lazy" data-preview-url="https://makerworld.com/en/models/2306054-texture-roller-v216-valentines-day-vi">
               <div class="model-body"><h3>Valentine's Day rollers</h3><p>Themed roller set for seasonal surface patterns.</p><a class="card-link" href="https://makerworld.com/en/models/2306054-texture-roller-v216-valentines-day-vi" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
           </div>
         </article>
 
-        <article class="model-group">
+          <article class="model-group" data-filter-group>
           <h2>Forming & Ribs</h2>
           <p>Rib profiles and shaping tools for walls and interiors.</p>
           <div class="model-gallery">
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Pottery rib tool 031" loading="lazy" data-preview-url="https://www.printables.com/model/1224394-pottery-rib-tool-031/files">
               <div class="model-body"><h3>Pottery rib tool #031</h3><p>Standard profile rib for smoothing and shaping.</p><a class="card-link" href="https://www.printables.com/model/1224394-pottery-rib-tool-031/files" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Pottery rib 109A bubble cup" loading="lazy" data-preview-url="https://www.printables.com/model/1291461-pottery-rib-109a-bubble-cup">
               <div class="model-body"><h3>Pottery rib 109A</h3><p>Bubble-cup profile for interior shaping.</p><a class="card-link" href="https://www.printables.com/model/1291461-pottery-rib-109a-bubble-cup" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Parametric pottery shrinkage caliper" loading="lazy" data-preview-url="https://makerworld.com/en/models/2290294-parametric-pottery-shrinkage-caliper-openscad">
               <div class="model-body"><h3>Shrinkage caliper</h3><p>Parametric caliper for wet-to-fired size tracking.</p><a class="card-link" href="https://makerworld.com/en/models/2290294-parametric-pottery-shrinkage-caliper-openscad" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
           </div>
         </article>
 
-        <article class="model-group">
+          <article class="model-group" data-filter-group>
           <h2>Slab Building</h2>
           <p>Cutters and guides for repeatable slab dimensions.</p>
           <div class="model-gallery">
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Clay slab cutter 0.5 cm spacing" loading="lazy" data-preview-url="https://makerworld.com/en/models/1286222-clay-slab-cutter-0-5-cm-spacing-v3-metric?from=search#profileId-1315380">
               <div class="model-body"><h3>Clay slab cutter</h3><p>0.5 cm spacing for consistent slab prep.</p><a class="card-link" href="https://makerworld.com/en/models/1286222-clay-slab-cutter-0-5-cm-spacing-v3-metric?from=search#profileId-1315380" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Metric infinite pottery thickness guides" loading="lazy" data-preview-url="https://makerworld.com/en/models/2283305-metric-infinite-pottery-thickness-guides">
               <div class="model-body"><h3>Thickness guides</h3><p>Metric rolling guides for slab thickness control.</p><a class="card-link" href="https://makerworld.com/en/models/2283305-metric-infinite-pottery-thickness-guides" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Tapered cup jig for handbuilding pottery" loading="lazy" data-preview-url="https://makerworld.com/en/models/2197276-tappered-cup-jig-for-handbuilding-pottery">
               <div class="model-body"><h3>Tapered cup jig</h3><p>Helper jig for consistent handbuilt cups.</p><a class="card-link" href="https://makerworld.com/en/models/2197276-tappered-cup-jig-for-handbuilding-pottery" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
           </div>
         </article>
 
-        <article class="model-group">
+          <article class="model-group" data-filter-group>
           <h2>Wheel & Trimming</h2>
           <p>Centering, storage, and trimming helpers for wheel sessions.</p>
           <div class="model-gallery">
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Pottery wheel tool holder" loading="lazy" data-preview-url="https://makerworld.com/en/models/1914350-pottery-wheel-tool-holder?from=search#profileId-2053277">
               <div class="model-body"><h3>Pottery wheel tool holder</h3><p>Keeps tools organized at the wheel.</p><a class="card-link" href="https://makerworld.com/en/models/1914350-pottery-wheel-tool-holder?from=search#profileId-2053277" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Pottery wheel tool holder alternative" loading="lazy" data-preview-url="https://makerworld.com/en/models/55399-pottery-wheel-tool-holder?from=search#profileId-56952">
               <div class="model-body"><h3>Wheel tool holder (alt)</h3><p>Alternative holder layout for wheel-side access.</p><a class="card-link" href="https://makerworld.com/en/models/55399-pottery-wheel-tool-holder?from=search#profileId-56952" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Pottery gauge for tool holder" loading="lazy" data-preview-url="https://makerworld.com/en/models/2025888-pottery-gauge-for-tool-holder?from=search#profileId-2184201">
               <div class="model-body"><h3>Pottery gauge for tool holder</h3><p>Gauge add-on for repeatable measurements.</p><a class="card-link" href="https://makerworld.com/en/models/2025888-pottery-gauge-for-tool-holder?from=search#profileId-2184201" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Pottery tool storage" loading="lazy" data-preview-url="https://makerworld.com/en/models/2181991-pottery-tool-storage?from=search#profileId-2368392">
               <div class="model-body"><h3>Pottery tool storage</h3><p>General organizer for tools and accessories.</p><a class="card-link" href="https://makerworld.com/en/models/2181991-pottery-tool-storage?from=search#profileId-2368392" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Trimming spinner tool with 608 bearing" loading="lazy" data-preview-url="https://makerworld.com/en/models/2253144-pottery-trimming-spinner-tool-608-bearing">
               <div class="model-body"><h3>Trimming spinner tool</h3><p>Uses 608 bearing for smooth rotation during trimming.</p><a class="card-link" href="https://makerworld.com/en/models/2253144-pottery-trimming-spinner-tool-608-bearing" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Trimming centering tool" loading="lazy" data-preview-url="https://makerworld.com/en/models/1019517-trimming-centering-tool?from=search#profileId-1000520">
               <div class="model-body"><h3>Trimming centering tool</h3><p>Centers pieces quickly before trimming.</p><a class="card-link" href="https://makerworld.com/en/models/1019517-trimming-centering-tool?from=search#profileId-1000520" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Beginner-friendly pottery centering tool" loading="lazy" data-preview-url="https://makerworld.com/en/models/2035588-beginner-friendly-pottery-centering-tool?from=search#profileId-2195658">
               <div class="model-body"><h3>Beginner centering tool</h3><p>Simple centering aid for early wheel practice.</p><a class="card-link" href="https://makerworld.com/en/models/2035588-beginner-friendly-pottery-centering-tool?from=search#profileId-2195658" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
           </div>
         </article>
 
-        <article class="model-group">
+          <article class="model-group" data-filter-group>
           <h2>Banding Wheels & Rim Tools</h2>
           <p>Accessories for wheel support, rim shaping, and lip consistency.</p>
           <div class="model-gallery">
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Max size pottery banding wheel with 6202Z bearing" loading="lazy" data-preview-url="https://makerworld.com/en/models/2282736-max-size-pottery-banding-wheel-with-6202z-bearing">
               <div class="model-body"><h3>Banding wheel</h3><p>Full-size banding wheel with 6202Z bearing.</p><a class="card-link" href="https://makerworld.com/en/models/2282736-max-size-pottery-banding-wheel-with-6202z-bearing" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Mini pottery wheel with 6202Z bearing" loading="lazy" data-preview-url="https://makerworld.com/en/models/1680729-mini-pottery-wheel-with-6202z-bearing?from=search#profileId-1780472">
               <div class="model-body"><h3>Mini pottery wheel (6202Z)</h3><p>Compact wheel for smaller pieces and details.</p><a class="card-link" href="https://makerworld.com/en/models/1680729-mini-pottery-wheel-with-6202z-bearing?from=search#profileId-1780472" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Pottery rim cones" loading="lazy" data-preview-url="https://www.printables.com/model/1144562-pottery-rim-cones">
               <div class="model-body"><h3>Pottery rim cones</h3><p>Rim tools for slipcasting galleries and refinements.</p><a class="card-link" href="https://www.printables.com/model/1144562-pottery-rim-cones" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Rim cone pottery tool" loading="lazy" data-preview-url="https://makerworld.com/en/models/470297-rim-cone-pottery?from=search#profileId-379786">
               <div class="model-body"><h3>Rim cone pottery tool</h3><p>Repeatable rim shaping geometry.</p><a class="card-link" href="https://makerworld.com/en/models/470297-rim-cone-pottery?from=search#profileId-379786" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Nesting pottery rim cone tools" loading="lazy" data-preview-url="https://makerworld.com/en/models/2390992-nesting-pottery-rim-cone-tools?from=search">
               <div class="model-body"><h3>Nesting rim cone tools</h3><p>Nested rim-cone sizes for different diameters.</p><a class="card-link" href="https://makerworld.com/en/models/2390992-nesting-pottery-rim-cone-tools?from=search" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
           </div>
         </article>
 
-        <article class="model-group">
+          <article class="model-group" data-filter-group>
           <h2>Extruders & Misc</h2>
           <p>General utility tools for scoring, beveling, and handle production.</p>
           <div class="model-gallery">
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Powered pottery clay extruder handles test tiles" loading="lazy" data-preview-url="https://makerworld.com/en/models/2369183-powered-pottery-clay-extruder-handles-test-tiles">
               <div class="model-body"><h3>Powered clay extruder</h3><p>For handles, coils, and test tile extrusion.</p><a class="card-link" href="https://makerworld.com/en/models/2369183-powered-pottery-clay-extruder-handles-test-tiles" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: Pottery scoring tool" loading="lazy" data-preview-url="https://www.printables.com/model/509567-pottery-scoring-tool">
               <div class="model-body"><h3>Pottery scoring tool</h3><p>Scoring helper for cleaner joins.</p><a class="card-link" href="https://www.printables.com/model/509567-pottery-scoring-tool" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
-            <article class="model-card">
+            <article class="model-card" data-filter-item>
               <img class="model-preview" alt="Preview: 30 45 and 60 degree clay bevel cutter tool" loading="lazy" data-preview-url="https://www.printables.com/model/319292-30deg-45deg-and-60deg-degree-clay-bevel-cutter-too">
               <div class="model-body"><h3>Bevel cutter (30/45/60)</h3><p>Angle cutters for clean slab edge joins.</p><a class="card-link" href="https://www.printables.com/model/319292-30deg-45deg-and-60deg-degree-clay-bevel-cutter-too" target="_blank" rel="noopener noreferrer">Open model</a></div>
             </article>
           </div>
         </article>
+        </div>
+        <p class="search-empty" data-filter-empty hidden>No print models match that keyword yet.</p>
       </section>
 
       <footer class="footer">
