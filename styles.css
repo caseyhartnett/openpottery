@@ -70,8 +70,16 @@ a {
 
 .brand-logo {
   width: 75px;
+  max-width: 75px;
   height: auto;
   display: block;
+}
+
+.brand > img {
+  width: 75px;
+  max-width: 75px;
+  height: auto;
+  flex: 0 0 auto;
 }
 
 .brand-text {
