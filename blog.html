@@ -64,7 +64,44 @@
       </header>
 
       <section class="post-list reveal">
-        <article class="post-card">
+        <article class="post-card" id="torrify-parametric-caliper">
+          <p class="post-meta">February 17, 2026</p>
+          <h2>Torrify and the Parametric Pottery Shrinkage Caliper workflow</h2>
+          <div class="post-content">
+            <p>
+              I began learning CAD to fill a gap: simple, custom pottery tools that weren't available on standard repositories like Printables or MakerWorld. I quickly realized that parametric CAD (via OpenSCAD) is uniquely suited for ceramics, particularly for generating tools that automatically adjust for clay shrinkage rates.
+            </p>
+            <p>
+              However, leveraging modern LLMs to write this code was tedious. The workflow involved constant context switching—copying code, pasting it into a viewer, taking screenshots of errors, and feeding them back to the AI.
+            </p>
+            <p>
+              To solve this, I built <a href="https://torrify.org/" target="_blank" rel="noopener noreferrer">Torrify</a>.
+            </p>
+            <p>
+              Torrify is a free, open-source desktop tool that streamlines the design process. It integrates the chat interface directly with a real-time OpenSCAD preview, allowing for a seamless loop of prompting and visualization. It supports "bring-your-own-keys" for privacy and flexibility.
+            </p>
+            <p>
+              The Parametric Pottery Shrinkage Caliper, available in our <a href="prints.html">3D Prints section</a>, was the pilot project for this workflow. By simply describing the tool and its requirements to the AI, I was able to generate a fully adjustable model without writing a single line of code manually.
+            </p>
+            <p>
+              Other tools created using this workflow include:
+            </p>
+            <ul>
+              <li><a href="https://makerworld.com/en/models/2290294-parametric-pottery-shrinkage-caliper-openscad#profileId-2498843" target="_blank" rel="noopener noreferrer">Parametric Pottery Shrinkage Caliper (OpenSCAD)</a></li>
+              <li><a href="https://makerworld.com/en/models/2355497-pottery-wall-switch-cover-plate-template-scaled#profileId-2576513" target="_blank" rel="noopener noreferrer">Pottery Wall Switch Cover Plate Template (Scaled)</a></li>
+              <li><a href="https://makerworld.com/en/models/2287474-pottery-shrinkage-ruler-imperial-metric#profileId-2495414" target="_blank" rel="noopener noreferrer">Pottery Shrinkage Ruler (Imperial + Metric)</a></li>
+              <li><a href="https://makerworld.com/en/models/2283893-imperial-infinite-pottery-thickness-guides#profileId-2490905" target="_blank" rel="noopener noreferrer">Imperial Infinite Pottery Thickness Guides</a></li>
+            </ul>
+            <p>
+              For each of these, the process was conversational: discuss the design goals, review the generated 3D model, and iterate. If a shape isn't quite right, Torrify's built-in screenshot tool lets you show the AI exactly what needs fixing.
+            </p>
+            <p>
+              V1 is targeted for release in early March 2026.
+            </p>
+          </div>
+        </article>
+
+        <article class="post-card" id="leaf-cookie-cutters">
           <p class="post-meta">February 17, 2026</p>
           <h2>Leaf ceramics with 3D-printed cookie cutters</h2>
           <div class="post-content">
@@ -108,7 +145,7 @@
           </div>
         </article>
 
-        <article class="post-card">
+        <article class="post-card" id="casper-texture-molds">
           <p class="post-meta">February 15, 2026</p>
           <h2>3D printed texture molds: meet Casper</h2>
           <div class="post-content">
