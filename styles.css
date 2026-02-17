@@ -68,12 +68,10 @@ a {
   color: var(--ink);
 }
 
-.brand-mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  background: conic-gradient(from 40deg, #c07a4f, #e4bf93, #b7683d, #c07a4f);
-  border: 1px solid #b56f46;
+.brand-logo {
+  width: 75px;
+  height: auto;
+  display: block;
 }
 
 .brand-text {
