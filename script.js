@@ -30,17 +30,20 @@ document.querySelectorAll("[data-filter-root]").forEach((root) => {
         group.querySelectorAll("[data-filter-item]").forEach((item) => {
           const matches = !query || normalize(item.textContent).includes(query);
           item.hidden = !matches;
+          item.style.display = matches ? "" : "none";
           if (matches) {
             groupVisible += 1;
             visibleCount += 1;
           }
         });
         group.hidden = groupVisible === 0;
+        group.style.display = groupVisible === 0 ? "none" : "";
       });
     } else {
       root.querySelectorAll("[data-filter-item]").forEach((item) => {
         const matches = !query || normalize(item.textContent).includes(query);
         item.hidden = !matches;
+        item.style.display = matches ? "" : "none";
         if (matches) visibleCount += 1;
       });
     }
@@ -104,9 +107,9 @@ document.querySelectorAll("[data-filter-root]").forEach((root) => {
     input.dispatchEvent(new Event("input"));
   };
 
-  fetch("data/video-repository.json")
+  fetch("/data/video-repository.json", { cache: "no-store" })
     .then((response) => {
-      if (!response.ok) throw new Error("Failed to load video repository");
+      if (!response.ok) throw new Error(`Failed to load video repository (${response.status})`);
       return response.json();
     })
     .then((payload) => {
@@ -120,9 +123,10 @@ document.querySelectorAll("[data-filter-root]").forEach((root) => {
 
       refreshFilter();
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error("Video repository load error:", error);
       if (repoMeta) {
-        repoMeta.textContent = "Repository video data could not be loaded right now.";
+        repoMeta.textContent = `Repository video data could not be loaded right now: ${error.message}`;
       }
     });
 })();
