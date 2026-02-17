@@ -224,6 +224,10 @@ a {
   display: none;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .footer {
   margin-top: 1.1rem;
   padding-top: 0.8rem;

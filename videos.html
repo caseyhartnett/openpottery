@@ -264,44 +264,93 @@
         <p class="search-empty" data-filter-empty hidden>No videos match that keyword yet.</p>
       </section>
 
+      <section class="reveal" style="margin-top: 3rem;" data-filter-root>
+        <h2>Expanded Video Repository</h2>
+        <p>Additional videos pulled from featured creators. Search by creator, title, or topic keywords.</p>
+        <div class="search-panel">
+          <label for="videos-repo-filter">Search repository videos</label>
+          <input id="videos-repo-filter" data-filter-input type="search" autocomplete="off" placeholder="Try: trimming, glaze, mug, porcelain">
+        </div>
+
+        <div class="videos-grid" id="video-repo-grid"></div>
+        <p class="search-empty" data-filter-empty hidden>No repository videos match that keyword yet.</p>
+        <p class="post-meta" id="video-repo-meta">Loading repository videos...</p>
+      </section>
+
       <section class="reveal" style="margin-top: 3rem;">
         <h2>Featured Creators</h2>
-        <p>Follow these experts for consistent, high-quality pottery education.</p>
+        <p>A categorized list of standout pottery educators and creators for different learning goals.</p>
         
         <div class="creator-list">
           <div class="creator-card">
             <h3>Florian Gadsby</h3>
-            <p class="post-meta">YouTube • Instagram</p>
-            <p>Refined functional ware, wheel throwing fundamentals, and studio discipline.</p>
-            <a href="https://www.youtube.com/@floriangadsby" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+            <p class="post-meta">The Gold Standard (Cinematic & Precision)</p>
+            <p>Arguably the most popular potter on the platform right now. His videos are beautifully shot, ASMR-quality, and focus on disciplined, precise wheel throwing with detailed narration.</p>
           </div>
           <div class="creator-card">
-            <h3>Ingleton Pottery</h3>
-            <p class="post-meta">YouTube</p>
-            <p>Practical studio advice and accessible how-to demonstrations from a long-running channel.</p>
-            <a href="https://www.youtube.com/@ingletonpottery" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+            <h3>Hsinchuen Lin</h3>
+            <p class="post-meta">The Gold Standard (Cinematic & Precision)</p>
+            <p>A master of precision known for chattering texture techniques and incredibly thin porcelain work. His videos are essential for advanced trimming study.</p>
+          </div>
+          <div class="creator-card">
+            <h3>Simon Leach</h3>
+            <p class="post-meta">The Teachers (Technique & Education)</p>
+            <p>Often considered the grandfather of YouTube pottery. His videos are raw and unedited, but his wheel-throwing and tool-making knowledge is unmatched.</p>
+          </div>
+          <div class="creator-card">
+            <h3>Bill van Gilder</h3>
+            <p class="post-meta">The Teachers (Technique & Education)</p>
+            <p>An excellent resource for functional ware like mugs, bowls, and casseroles. His workshop-style teaching is strong on the mechanics of why forms function well.</p>
+          </div>
+          <div class="creator-card">
+            <h3>Tim See</h3>
+            <p class="post-meta">The Teachers (Technique & Education)</p>
+            <p>Known for a non-scary approach to firing and wheel throwing, with complex topics broken into understandable bite-sized lessons.</p>
           </div>
           <div class="creator-card">
             <h3>Pottery to the People</h3>
-            <p class="post-meta">YouTube</p>
-            <p>Friendly, community-focused pottery education and handbuilding tutorials.</p>
-            <a href="https://www.youtube.com/c/PotterytothePeople" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+            <p class="post-meta">Handbuilding & Home Studio</p>
+            <p>One of the best channels for handbuilding without a wheel, focused on approachable projects with minimal equipment for home practice.</p>
+          </div>
+          <div class="creator-card">
+            <h3>Little Street Pottery</h3>
+            <p class="post-meta">Handbuilding & Home Studio</p>
+            <p>Clear, project-based tutorials that blend handbuilding and wheel throwing, often centered on decorative and functional items.</p>
+          </div>
+          <div class="creator-card">
+            <h3>John Britt</h3>
+            <p class="post-meta">Glazing & Science</p>
+            <p>The definitive source for glaze understanding. Essential for learning glaze chemistry, color outcomes, and mixing your own materials.</p>
+          </div>
+          <div class="creator-card">
+            <h3>Washington Street Studios</h3>
+            <p class="post-meta">Glazing & Science</p>
+            <p>Excellent deep dives into kiln physics, firing schedules, and clay body behavior.</p>
+          </div>
+          <div class="creator-card">
+            <h3>Old Forge Creations</h3>
+            <p class="post-meta">Modern & Experimental</p>
+            <p>A UK-based potter known for combining modern technology with ceramics, especially 3D-printed molds and tools for complex geometric forms.</p>
+          </div>
+          <div class="creator-card">
+            <h3>Earth Nation Ceramics</h3>
+            <p class="post-meta">Modern & Experimental</p>
+            <p>High-energy and entertaining content covering business realities, selling pottery, and experimental firing techniques.</p>
+          </div>
+          <div class="creator-card">
+            <h3>Ingleton Pottery</h3>
+            <p class="post-meta">Production Throwing</p>
+            <p>If you want to study speed and workflow efficiency, this UK production potter demonstrates high-volume throwing in real time.</p>
           </div>
           <div class="creator-card">
             <h3>Ancient Pottery</h3>
-            <p class="post-meta">YouTube</p>
+            <p class="post-meta">Additional Creator</p>
             <p>Andy Ward's channel dedicated to ancient pottery making and historical Southwest techniques.</p>
             <a href="https://www.youtube.com/@AncientPottery" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
           </div>
           <div class="creator-card">
-            <h3>Little Street Pottery</h3>
-            <p class="post-meta">YouTube</p>
-            <p>Technique-focused demonstrations and studio insights.</p>
-            <a href="https://www.youtube.com/c/LittleStreetPottery" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
-          </div>
-          <div class="creator-card">
             <h3>Potteryforall</h3>
-            <p class="post-meta">Instagram</p>
+            <p class="post-meta">Additional Creator</p>
             <p>Curated pottery inspiration and process clips from around the world.</p>
             <a href="https://www.instagram.com/potteryforall/" target="_blank" rel="noopener noreferrer">Instagram Profile</a>
           </div>
