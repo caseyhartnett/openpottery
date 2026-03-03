@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How I built and upgraded TheKilnGod kiln controller from the Bruce baseline, with parts list, setup guide, and migration notes.">
+  <title>Pi Kiln Controller (TheKilnGod) | OpenPottery</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/openpotterylogo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OpenPottery">
+  <meta property="og:title" content="Pi Kiln Controller (TheKilnGod) | OpenPottery">
+  <meta property="og:description" content="How I built and upgraded TheKilnGod kiln controller from the Bruce baseline, with parts list, setup guide, and migration notes.">
+  <meta property="og:image" content="https://openpottery.com/assets/openpotterylogo.png">
+  <meta property="og:url" content="https://openpottery.com/pi-kiln-controller.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="index.html" class="brand">
+        <img src="assets/openpotterylogo.png" class="brand-logo" alt="OpenPottery">
+        <span class="brand-text">OpenPottery</span>
+      </a>
+      <p class="brand-note">Free online pottery resources.</p>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="videos.html">Videos</a>
+        <a href="resources.html">Texts</a>
+        <a href="https://tool.openpottery.com">Template Tool</a>
+        <a href="blog.html">Blog</a>
+        <a href="prints.html">3D Prints</a>
+        <a href="fabrication.html">Maker Tools</a>
+        <a href="software.html">Software</a>
+        <a href="web-tools.html">Web Tools</a>
+        <a href="pi-kiln-controller.html" aria-current="page">Pi Kiln Controller</a>
+        <a href="about.html">About + License</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="hero reveal">
+        <p class="eyebrow">Build Guide + Upgrade Log</p>
+        <h1>Pi Kiln Controller (TheKilnGod)</h1>
+        <p>
+          This is my practical guide for building a kiln controller from the Bruce lineage and moving to
+          <strong>TheKilnGod</strong>. I use this page as a living reference for hardware, setup, upgrades,
+          and future improvements.
+        </p>
+      </header>
+
+      <section class="panel reveal">
+        <h2>Project Links</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://github.com/caseyhartnett/TheKilnGod" target="_blank" rel="noopener noreferrer">TheKilnGod on GitHub</a>
+            <br><span class="post-meta">Current working repository used for this controller and all ongoing upgrades.</span>
+          </li>
+          <li>
+            Bruce lineage reference: <a href="https://github.com/apollo-ng/picoReflow" target="_blank" rel="noopener noreferrer">apollo-ng / picoReflow</a>
+          </li>
+          <li>
+            Detailed comparison notes:
+            <a href="https://github.com/caseyhartnett/TheKilnGod/blob/main/docs/bruce-vs-thekilngod.md" target="_blank" rel="noopener noreferrer">Bruce vs TheKilnGod</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Why Start From TheKilnGod</h2>
+        <p>
+          If you are deciding where to begin, this is the best starting point because it keeps the familiar
+          kiln-control workflow while adding modern architecture, better safety behavior, stronger telemetry,
+          and active improvements to connectivity and UI.
+        </p>
+        <ul class="link-list">
+          <li>2023+ backend rewrite with clearer runtime separation (<code>kiln-controller.py</code> + <code>lib/oven.py</code>)</li>
+          <li>Blinka-oriented hardware support beyond Raspberry Pi</li>
+          <li>Expanded controls: <code>seek_start</code>, catch-up, auto-restart, <code>min_on_time</code>, low-temp throttling</li>
+          <li>Run-health tracking and trend analysis for long-term kiln behavior</li>
+          <li>Optional tokens for monitor/control API hardening</li>
+          <li>Legacy UI improvements plus React/Vite UI v2 at <code>/v2</code></li>
+        </ul>
+      </section>
+
+      <section class="grid reveal">
+        <article class="card">
+          <h2>1. What Stayed Familiar</h2>
+          <p class="post-meta">Core workflow continuity from the Bruce baseline.</p>
+          <ul class="link-list">
+            <li>Profile-based firing schedules</li>
+            <li>Browser-based control and monitoring</li>
+            <li>PID-driven control loop model</li>
+            <li>Local-network deployment on small Linux hosts</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>2. Biggest Upgrades I Kept</h2>
+          <p class="post-meta">Why this branch is a better long-term base.</p>
+          <ul class="link-list">
+            <li>MAX31855 and MAX31856 support with broad thermocouple type options</li>
+            <li>Run-health metrics (<code>within_5deg_pct</code>, <code>switches_per_hour</code>, <code>overshoot_max</code>, and more)</li>
+            <li>MQTT/Home Assistant integration and optional ntfy notifications</li>
+            <li>Optional OLED runtime display and passive piezo buzzer feedback</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>3. UI Direction</h2>
+          <p class="post-meta">Two usable paths today.</p>
+          <ul class="link-list">
+            <li>Legacy UI: stable and expanded with schedule builder quality-of-life updates</li>
+            <li>UI v2: React + TypeScript + Vite dashboard with health trends and event timeline</li>
+            <li>UI v2 serves from <code>public/v2</code> and opens at <code>/v2</code></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>4. Safety Notes</h2>
+          <p class="post-meta">Do not skip this section during build.</p>
+          <ul class="link-list">
+            <li>Emergency shutoff and thermocouple fault handling are configurable in <code>config.py</code></li>
+            <li>Use a properly sized zero-cross SSR plus heatsink/fan where needed</li>
+            <li>Keep mains switching external to controller logic board</li>
+            <li>Verify local electrical code compliance before live firing</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>5. Migration Checklist</h2>
+          <p class="post-meta">Bruce to TheKilnGod sanity check.</p>
+          <ul class="link-list">
+            <li>GPIO map and output inversion settings</li>
+            <li>SPI mode and thermocouple board configuration</li>
+            <li>Service/startup paths and system user</li>
+            <li>Monitor/control tokens if auth is enabled</li>
+            <li>Legacy UI path and v2 build path validation</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>6. Why This Is Future-Proof</h2>
+          <p class="post-meta">What makes this a strong ongoing platform.</p>
+          <ul class="link-list">
+            <li>No heavy infrastructure required (single-host, file-based persistence)</li>
+            <li>Proven on low-power Pi hardware with simulation mode for safer changes</li>
+            <li>Active docs for API, run health, migration, and troubleshooting</li>
+            <li>Easy to keep evolving without rewriting safety-critical core logic from scratch</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Parts To Buy</h2>
+        <p>Recommended starter set for a practical build:</p>
+        <ul class="link-list">
+          <li><strong>Controller host:</strong> Raspberry Pi (or another Blinka-supported board with SPI + network)</li>
+          <li><strong>Thermocouple board:</strong> Adafruit MAX31855 or MAX31856 breakout</li>
+          <li><strong>Thermocouple probe:</strong> kiln-rated probe matched to your board/type</li>
+          <li><strong>Power switching:</strong> zero-cross SSR sized for kiln load, plus heatsink</li>
+          <li><strong>Wiring/prototyping:</strong> breadboard or controller PCB, jumpers, terminals, GPIO header cable</li>
+          <li><strong>Controller enclosure:</strong> non-conductive enclosure with strain relief and airflow management</li>
+          <li><strong>Safety hardware:</strong> inline fusing, disconnect method, and emergency-stop/interlock path</li>
+          <li><strong>Optional upgrade:</strong> SSD1309 OLED display (I2C)</li>
+          <li><strong>Optional upgrade:</strong> passive piezo buzzer on GPIO 12</li>
+          <li><strong>Optional upgrade:</strong> 5V SSR cooling fan and fan driver path</li>
+        </ul>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Build Steps (Practical Order)</h2>
+        <ol class="link-list">
+          <li>Assemble hardware with SSR control, thermocouple board, and clean grounding.</li>
+          <li>Install Raspberry Pi OS, clone repo, create venv, and install requirements.</li>
+          <li>Set <code>config.py</code> (or <code>secrets.py</code>) for pins, thermocouple type, units, safety limits, and tokens.</li>
+          <li>Enable SPI (and I2C if using OLED) using <code>raspi-config</code>.</li>
+          <li>Run hardware tests: <code>./test-thermocouple.py</code>, <code>./test-output.py</code>, and optional display tests.</li>
+          <li>Start controller and validate web UI run/pause/resume/stop paths.</li>
+          <li>Test simulation and low-temp live profile before full firing profiles.</li>
+          <li>Review logs and run-health trends after each firing, then tune and iterate.</li>
+        </ol>
+      </section>
+
+      <section class="grid reveal">
+        <article class="card">
+          <h2>Connectivity Upgrades I Use</h2>
+          <ul class="link-list">
+            <li>Home Assistant MQTT publishing for kiln status and temperature entities</li>
+            <li>Optional notifications pipeline (<code>lib/notifications.py</code>)</li>
+            <li>Watcher patterns for out-of-range conditions and fault visibility</li>
+            <li>Monitor/control token separation for safer network exposure</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>UI Upgrades I Use</h2>
+          <ul class="link-list">
+            <li>Legacy schedule builder improvements for quick profile authoring</li>
+            <li>UI v2 dashboard for cleaner telemetry visibility and timeline context</li>
+            <li>Run-health trend panel with run inclusion/exclusion control</li>
+            <li>Profile preflight checks and better control-state UX patterns</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Image Requests / Placeholders</h2>
+        <div class="tool-placeholder">
+          Controller enclosure and wiring layout photo.
+        </div>
+        <div class="tool-placeholder">
+          UI v2 dashboard screenshot with health trend panel.
+        </div>
+        <div class="tool-placeholder">
+          Comparison diagram (Bruce baseline vs TheKilnGod architecture).
+        </div>
+        <div class="tool-placeholder">
+          Parts flat-lay photo with labels (Pi, thermocouple board, SSR, probe, OLED, buzzer).
+        </div>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Recommended Docs To Keep Handy</h2>
+        <ul class="link-list">
+          <li><a href="https://github.com/caseyhartnett/TheKilnGod/blob/main/README.md" target="_blank" rel="noopener noreferrer">README.md</a> for setup and hardware reference</li>
+          <li><a href="https://github.com/caseyhartnett/TheKilnGod/blob/main/docs/old-to-new.md" target="_blank" rel="noopener noreferrer">docs/old-to-new.md</a> for migration context</li>
+          <li><a href="https://github.com/caseyhartnett/TheKilnGod/blob/main/docs/features-and-capabilities.md" target="_blank" rel="noopener noreferrer">docs/features-and-capabilities.md</a> for capability inventory</li>
+          <li><a href="https://github.com/caseyhartnett/TheKilnGod/blob/main/docs/run-health.md" target="_blank" rel="noopener noreferrer">docs/run-health.md</a> for reliability trends</li>
+          <li><a href="https://github.com/caseyhartnett/TheKilnGod/blob/main/docs/ui-v2.md" target="_blank" rel="noopener noreferrer">docs/ui-v2.md</a> for modern UI details</li>
+          <li><a href="https://github.com/caseyhartnett/TheKilnGod/blob/main/docs/board-spec-v1.md" target="_blank" rel="noopener noreferrer">docs/board-spec-v1.md</a> for cleaner controller hardware direction</li>
+        </ul>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Upgrade Log Template</h2>
+        <p class="post-meta">Use one entry per meaningful change:</p>
+        <ul class="link-list">
+          <li><strong>Date:</strong> YYYY-MM-DD</li>
+          <li><strong>Area:</strong> Hardware / Safety / Connectivity / UI / API / Telemetry</li>
+          <li><strong>Change:</strong> What I changed</li>
+          <li><strong>Reason:</strong> Why I changed it</li>
+          <li><strong>Result:</strong> What improved (or regressed)</li>
+          <li><strong>Follow-up:</strong> Next test or next action</li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        <p>Copyright <span id="year"></span> OpenPottery.</p>
+        <p>Licensed under GNU GPL v3.0 or later.</p>
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
